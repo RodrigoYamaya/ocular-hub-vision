@@ -1,0 +1,118 @@
+/* Reset básico para remover margens dp navegador para evitar layouts desalinhados*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Aki estrutura do corpo: Uso de Flexbox para garantir que o rodapé (footer) permaneça sempre na base da tela */
+body {
+    background-color: #f4f7f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Escolhei cor azul que passa um tom hospitalar e serio */
+header {
+    background-color: #003366; /* Azul Marinho */
+    color: white;
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Destaque no nome 'Hub' para dar um charme e destacar Hub */
+header .logo h1 span {
+    color: #00aaff; /* Azul claro para destaque */
+}
+
+/* Nav */
+nav {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Efeito da aba ativa para evitar que usuario nao se perca kkk experiencia eu mesmo perdi */
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0 5%;
+}
+
+nav ul li a {
+    display: block;
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+    color: #666;
+    font-weight: 500;
+}
+
+nav ul li a.active {
+    color: #003366;
+    border-bottom: 3px solid #003366;
+}
+
+/* Main / Upload Container dos exames e centralizei  upload na tela */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+/* Card de upload de exames: Uma cor branca para destacar tom mais refinado e simples */
+.upload-container {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+}
+
+/* Drop Zone: Onde o médico clica para subir o exame */
+.drop-zone {
+    border: 2px dashed #00aaff;
+    border-radius: 8px;
+    padding: 2rem;
+    margin: 1.5rem 0;
+    cursor: pointer;
+    transition: 0.3s;
+}
+/* Feedback visual quando mouse passa por cima  */ 
+.drop-zone:hover {
+    background-color: #e6f7ff;
+}
+
+/* Botão de ação principal */
+.btn-analisar {
+    background-color: #003366;
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s;
+}
+
+.btn-analisar:hover {
+    background-color: #004d99;
+}
+
+/* Footer do paragrafo do sistema cor bem simples e menos destac */
+footer {
+    background-color: #eee;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.8rem;
+    color: #777;
+}
