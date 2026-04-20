@@ -3,22 +3,18 @@ const fileInput = document.querySelector('.file-input');
 const dropZone = document.querySelector('.drop-zone');
 const dropZoneText = document.querySelector('.drop-zone-text');
 
-// --- LÓGICA DA DROPZONE (ARRASTAR E SOLTAR) ---
 
-// 1. Faz o clique na zona abrir o seletor de arquivos
 dropZone.addEventListener('click', () => fileInput.click());
 
-// 2. Quando seleciona via clique normal, atualiza o texto
 fileInput.addEventListener('change', () => {
     if (fileInput.files.length > 0) {
         atualizarTextoDropzone(fileInput.files[0].name);
     }
 });
 
-// 3. Efeitos visuais quando arrasta o arquivo sobre a zona
 ['dragover', 'dragleave', 'drop'].forEach(eventName => {
     dropZone.addEventListener(eventName, (e) => {
-        e.preventDefault(); // Impede o navegador de abrir a imagem
+        e.preventDefault();
         e.stopPropagation();
     });
 });
@@ -26,7 +22,6 @@ fileInput.addEventListener('change', () => {
 dropZone.addEventListener('dragover', () => dropZone.classList.add('drop-zone--over'));
 dropZone.addEventListener('dragleave', () => dropZone.classList.remove('drop-zone--over'));
 
-// 4. Quando o usuário SOLTA o arquivo na zona
 dropZone.addEventListener('drop', (e) => {
     dropZone.classList.remove('drop-zone--over');
 
@@ -37,13 +32,11 @@ dropZone.addEventListener('drop', (e) => {
     }
 });
 
-// Função simples para mudar o texto na tela
 function atualizarTextoDropzone(nomeArquivo) {
     dropZoneText.innerText = `Arquivo selecionado: ${nomeArquivo}`;
 }
 
 
-// --- LÓGICA DE ENVIO (SUBMIT) ---
 
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
