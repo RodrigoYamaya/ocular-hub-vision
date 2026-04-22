@@ -2,7 +2,6 @@ package com.RodSolution.ocularhub.controller;
 
 import com.RodSolution.ocularhub.model.dto.MedicoRequestDto;
 import com.RodSolution.ocularhub.model.dto.MedicoResponseDto;
-import com.RodSolution.ocularhub.repository.MedicoRepository;
 import com.RodSolution.ocularhub.service.MedicoService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

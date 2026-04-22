@@ -56,7 +56,7 @@ public class MedicoService {
     public MedicoResponseDto updateMedico(MedicoRequestDto medicoDto, long id) {
         Medico medico = medicoRepository.findById(id)
                 .orElseThrow(()-> new RecursoNaoEncontradoException("Medico com ID " + id + " não encontrado."));
-        medico.setName(medicoDto.nome());
+        medico.setNome(medicoDto.nome());
         medico.setEmail(medicoDto.email());
         medico.setEspecialidade(medicoDto.especialidade());
 
