@@ -1,0 +1,128 @@
+/* Reaproveitando sua fonte e reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f7f9;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Centralização da página de autenticação (Lei 8: Estética Minimalista) */
+.auth-page {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+/* Card de Cadastro (Seguindo o estilo do seu upload-container) */
+.auth-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    max-width: 450px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Logo consistente com o Header que você criou */
+.logo h1 {
+    color: #003366;
+    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+}
+
+.logo h1 span {
+    color: #00aaff;
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Estilização dos inputs (Lei 5: Prevenção de Erros) */
+.input-group {
+    text-align: left;
+    margin-bottom: 1.2rem;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.85rem;
+    color: #003366;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+}
+
+.input-group input, .input-group select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fafafa;
+    outline-color: #00aaff;
+}
+
+/* Botão seguindo o seu btn-analisar */
+.btn-cadastrar {
+    background-color: #003366;
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s;
+    margin-top: 1rem;
+}
+
+.btn-cadastrar:hover {
+    background-color: #004d99;
+}
+
+/* Feedback visual (Lei 1: Visibilidade do Status) */
+.status-msg {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    min-height: 1.2rem;
+}
+
+.success { color: #27ae60; font-weight: bold; }
+.error { color: #e74c3c; font-weight: bold; }
+
+.footer-link {
+    margin-top: 1.5rem;
+    font-size: 0.85rem;
+}
+
+.footer-link a {
+    color: #00aaff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Seu Footer padrão */
+footer {
+    background-color: #eee;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.8rem;
+    color: #777;
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - OcularHub Vision</title>
+    <link rel="stylesheet" href="../assets/css/cadastro-style.css">
+</head>
+<body>
+
+<main class="auth-page">
+    <div class="auth-card">
+        <div class="logo">
+            <h1>Ocular<span>Hub</span> Vision</h1>
+        </div>
+
+        <h2>Cadastro Profissional</h2>
+        <p>Crie sua conta para acessar a triagem inteligente.</p>
+
+        <form id="formMedico">
+            <div class="input-group">
+                <label for="nome">Nome Completo</label>
+                <input type="text" id="nome" placeholder="Ex: Dr. Rodrigo Yamaya" required>
+            </div>
+
+            <div class="input-group">
+                <label for="crm">CRM</label>
+                <input type="text" id="crm" placeholder="000000-RJ" required>
+            </div>
+
+            <div class="input-group">
+                <label for="email">E-mail Profissional</label>
+                <input type="email" id="email" placeholder="medico@exemplo.com" required>
+            </div>
+
+            <div class="input-group">
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" placeholder="Crie uma senha forte" required>
+            </div>
+
+            <div class="input-group">
+                <label for="especialidade">Especialidade</label>
+                <select id="especialidade">
+                    <option value="Oftalmologia Geral">Oftalmologia Geral</option>
+                    <option value="Retinologia">Retinologia</option>
+                    <option value="Glaucoma">Glaucoma</option>
+                    <option value="Catarata">Catarata</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn-cadastrar">Finalizar Cadastro</button>
+        </form>
+
+        <div id="mensagem" class="status-msg"></div>
+
+        <p class="footer-link">Já possui uma conta? <a href="login.html">Faça login</a></p>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2026 OcularHub Vision - Desenvolvido por RodSolution</p>
+</footer>
+
+<script src="auth.js"></script>
+</body>
+</html>
