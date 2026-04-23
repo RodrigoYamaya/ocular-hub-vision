@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     mensagemDiv.classList.add('success');
 
                     setTimeout(() => {
-                        window.location.href = "../index.html"; // Volta para a raiz
+                        window.location.href = "../index.html";
                     }, 1500);
                 } else {
                     mensagemDiv.innerText = "E-mail ou senha inválidos.";
