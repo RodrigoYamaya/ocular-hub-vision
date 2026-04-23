@@ -1,25 +1,33 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const formMedico = document.getElementById('formMedico'); // Formulário de Cadastro
-    const formLogin = document.getElementById('formLogin');   // Formulário de Login
+    const formMedico = document.getElementById('formMedico');
+    const formLogin = document.getElementById('formLogin');
     const mensagemDiv = document.getElementById('mensagem');
 
-    const btnToggle = document.getElementById('toggleSenha');
-    const inputSenha = document.getElementById('senha');
-
-    if (btnToggle && inputSenha) {
-        btnToggle.addEventListener('click', () => {
-            const type = inputSenha.getAttribute('type') === 'password' ? 'text' : 'password';
-            inputSenha.setAttribute('type', type);
-
-            btnToggle.innerText = type === 'password' ? '👁️' : '🙈';
+    const toggles = document.querySelectorAll('.btn-toggle');
+    toggles.forEach(btn => {
+        btn.addEventListener('click', function() {
+            // Pega o input que está logo antes do botão ou dentro do mesmo container
+            const input = this.previousElementSibling;
+            const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
+            input.setAttribute('type', type);
+            this.innerText = type === 'password' ? '👁️' : '🙈';
         });
-    }
+    });
 
     if (formMedico) {
         const btnCadastrar = formMedico.querySelector('.btn-cadastrar');
 
         formMedico.addEventListener('submit', async (event) => {
             event.preventDefault();
+
+            const senha = document.getElementById('senha').value;
+            const confirmarSenha = document.getElementById('confirmarSenha')?.value;
+
+            if (confirmarSenha && senha !== confirmarSenha) {
+                mensagemDiv.innerText = "As senhas não coincidem!";
+                mensagemDiv.className = "status-msg error";
+                return; // Para o envio aqui mesmo
+            }
 
             btnCadastrar.innerText = "Processando...";
             btnCadastrar.disabled = true;
@@ -30,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 nome: document.getElementById('nome').value,
                 crm: document.getElementById('crm').value,
                 email: document.getElementById('email').value,
-                senha: document.getElementById('senha').value,
+                senha: senha,
                 especialidade: document.getElementById('especialidade').value
             };
 
@@ -41,13 +49,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     body: JSON.stringify(medicoData)
                 });
 
-                const result = await response.json();
-
                 if (response.ok) {
+                    const result = await response.json();
                     mensagemDiv.innerText = `Médico ${result.nome} cadastrado com sucesso!`;
                     mensagemDiv.classList.add('success');
                     setTimeout(() => { window.location.href = "login.html"; }, 2000);
                 } else {
+                    const result = await response.json().catch(() => ({}));
                     mensagemDiv.innerText = result.message || "Erro ao cadastrar.";
                     mensagemDiv.classList.add('error');
                     btnCadastrar.innerText = "Finalizar Cadastro";
@@ -56,11 +64,11 @@ document.addEventListener('DOMContentLoaded', () => {
             } catch (error) {
                 mensagemDiv.innerText = "Servidor offline.";
                 mensagemDiv.classList.add('error');
+                btnCadastrar.innerText = "Finalizar Cadastro";
                 btnCadastrar.disabled = false;
             }
         });
     }
-
 
     if (formLogin) {
         const btnEntrar = formLogin.querySelector('.btn-cadastrar');
@@ -87,14 +95,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (response.ok) {
                     const result = await response.json();
-
                     localStorage.setItem('medicoNome', result.nome);
 
                     mensagemDiv.innerText = "Login realizado! Entrando...";
                     mensagemDiv.classList.add('success');
 
                     setTimeout(() => {
-                        window.location.href = "../index.html";
+                        window.location.href = "../index.html"; // Volta para a raiz
                     }, 1500);
                 } else {
                     mensagemDiv.innerText = "E-mail ou senha inválidos.";
