@@ -50,7 +50,6 @@ main {
     padding: 2rem;
 }
 
-/* Heurística 8: Design Minimalista */
 .upload-container {
     background: white;
     padding: 2.5rem;
@@ -94,7 +93,6 @@ main {
     cursor: not-allowed;
 }
 
-/* Status Messages */
 .status-msg { margin: 10px 0; font-size: 0.9rem; font-weight: 500; }
 .success { color: #27ae60; }
 .error { color: #e74c3c; }

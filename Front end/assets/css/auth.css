@@ -5,8 +5,16 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+:root {
+    --primary-blue: #003366;
+    --accent-blue: #00aaff;
+    --bg-gray: #f4f7f9;
+    --success: #27ae60;
+    --error: #e74c3c;
+}
+
 body {
-    background-color: #f4f7f9;
+    background-color: var(--bg-gray);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -23,31 +31,32 @@ body {
 .auth-card {
     background: white;
     padding: 2.5rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    max-width: 450px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    max-width: 400px;
     width: 100%;
     text-align: center;
 }
 
 .logo h1 {
-    color: #003366;
-    margin-bottom: 0.5rem;
+    color: var(--primary-blue);
     font-size: 1.8rem;
+    margin-bottom: 0.5rem;
 }
 
 .logo h1 span {
-    color: #00aaff;
+    color: var(--accent-blue);
 }
 
 h2 {
     color: #333;
+    font-size: 1.4rem;
     margin-bottom: 0.5rem;
 }
 
 p {
     color: #666;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     margin-bottom: 1.5rem;
 }
 
@@ -59,36 +68,46 @@ p {
 .input-group label {
     display: block;
     font-size: 0.85rem;
-    color: #003366;
+    color: var(--primary-blue);
     font-weight: 600;
     margin-bottom: 0.4rem;
 }
 
-.input-group input, .input-group select {
+.input-group input {
     width: 100%;
     padding: 0.8rem;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 6px;
     background-color: #fafafa;
-    outline-color: #00aaff;
+    transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+    border-color: var(--accent-blue);
+    outline: none;
+    background-color: white;
 }
 
 .btn-cadastrar {
-    background-color: #003366;
+    background-color: var(--primary-blue);
     color: white;
     border: none;
     padding: 1rem;
-    border-radius: 5px;
+    border-radius: 6px;
     font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
     width: 100%;
-    transition: background 0.3s;
-    margin-top: 1rem;
+    transition: background 0.3s, transform 0.1s;
+    margin-top: 0.5rem;
 }
 
 .btn-cadastrar:hover {
     background-color: #004d99;
+}
+
+.btn-cadastrar:active {
+    transform: scale(0.98);
 }
 
 .status-msg {
@@ -97,18 +116,22 @@ p {
     min-height: 1.2rem;
 }
 
-.success { color: #27ae60; font-weight: bold; }
-.error { color: #e74c3c; font-weight: bold; }
+.status-msg.success { color: var(--success); font-weight: bold; }
+.status-msg.error { color: var(--error); font-weight: bold; }
 
 .footer-link {
     margin-top: 1.5rem;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
 }
 
 .footer-link a {
-    color: #00aaff;
+    color: var(--accent-blue);
     text-decoration: none;
     font-weight: bold;
+}
+
+.footer-link a:hover {
+    text-decoration: underline;
 }
 
 footer {
