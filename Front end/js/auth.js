@@ -3,14 +3,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const formLogin = document.getElementById('formLogin');
     const mensagemDiv = document.getElementById('mensagem');
 
-    const toggles = document.querySelectorAll('.btn-toggle');
+    const toggles = document.querySelectorAll('.btn-toggle, #toggleSenha');
+
     toggles.forEach(btn => {
         btn.addEventListener('click', function() {
-            // Pega o input que está logo antes do botão ou dentro do mesmo container
-            const input = this.previousElementSibling;
-            const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
-            input.setAttribute('type', type);
-            this.innerText = type === 'password' ? '👁️' : '🙈';
+            const container = this.closest('.password-wrapper') || this.closest('.password-container');
+            const input = container.querySelector('input');
+
+            const isPassword = input.getAttribute('type') === 'password';
+            input.setAttribute('type', isPassword ? 'text' : 'password');
+
+
+            this.innerText = isPassword ? '🔓' : '👁️';
         });
     });
 
@@ -26,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (confirmarSenha && senha !== confirmarSenha) {
                 mensagemDiv.innerText = "As senhas não coincidem!";
                 mensagemDiv.className = "status-msg error";
-                return; // Para o envio aqui mesmo
+                return;
             }
 
             btnCadastrar.innerText = "Processando...";
