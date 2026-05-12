@@ -8,6 +8,7 @@ import com.RodSolution.ocularhub.model.dto.MedicoResponseDto;
 import com.RodSolution.ocularhub.repository.MedicoRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -22,6 +23,9 @@ public class MedicoService {
     @Autowired
     private MedicoMapper medicoMapper;
 
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
 
     public MedicoResponseDto findById(long id) {
         Medico medico = medicoRepository.findById(id)
@@ -32,6 +36,7 @@ public class MedicoService {
     @Transactional
     public MedicoResponseDto saveMedico(MedicoRequestDto medicoDto) {
         Medico medico = medicoMapper.toEntity(medicoDto);
+        medico.setSenha(passwordEncoder.encode(medicoDto.senha()));
         Medico medicoSave = medicoRepository.save(medico);
        return medicoMapper.toDto(medicoSave);
     }
@@ -43,7 +48,6 @@ public class MedicoService {
                 .collect(Collectors.toList());
     }
 
-//continua amanha em criar o cadastro do medico. e tambem pesquisar sobre as entregras do trabalho way hub de IA.
     @Transactional
     public void deletarMedico(long id) {
         if(!medicoRepository.existsById(id)) {
@@ -61,7 +65,7 @@ public class MedicoService {
         medico.setEspecialidade(medicoDto.especialidade());
 
         if (medicoDto.senha() != null && !medicoDto.senha().isBlank()) {
-            medico.setSenha(medicoDto.senha());
+            medico.setSenha((passwordEncoder.encode(medicoDto.senha())));
         }
 
         Medico medicoSaveUpdate = medicoRepository.save(medico);
