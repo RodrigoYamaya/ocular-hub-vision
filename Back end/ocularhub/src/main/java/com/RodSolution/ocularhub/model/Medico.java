@@ -20,7 +20,7 @@ public class Medico {
     private String email;
 
     @Column(nullable = false)
-    private String senha;
+    private String password;
 
     @Column(nullable = false)
     private String especialidade;
@@ -28,12 +28,12 @@ public class Medico {
     public Medico() {
     }
 
-    public Medico(Long id, String nome, String crm, String email, String senha, String especialidade) {
+    public Medico(Long id, String nome, String crm, String email, String password, String especialidade) {
         this.id = id;
         this.nome = nome;
         this.crm = crm;
         this.email = email;
-        this.senha = senha;
+        this.password = password;
         this.especialidade = especialidade;
     }
 
@@ -69,12 +69,12 @@ public class Medico {
         this.email = email;
     }
 
-    public String getSenha() {
-        return senha;
+    public String getpassword() {
+        return password;
     }
 
-    public void setSenha(String senha) {
-        this.senha = senha;
+    public void setpassword(String password) {
+        this.password = password;
     }
 
     public String getEspecialidade() {

@@ -36,7 +36,7 @@ public class MedicoService {
     @Transactional
     public MedicoResponseDto saveMedico(MedicoRequestDto medicoDto) {
         Medico medico = medicoMapper.toEntity(medicoDto);
-        medico.setSenha(passwordEncoder.encode(medicoDto.senha()));
+        medico.setpassword(passwordEncoder.encode(medicoDto.password()));
         Medico medicoSave = medicoRepository.save(medico);
        return medicoMapper.toDto(medicoSave);
     }
@@ -64,8 +64,8 @@ public class MedicoService {
         medico.setEmail(medicoDto.email());
         medico.setEspecialidade(medicoDto.especialidade());
 
-        if (medicoDto.senha() != null && !medicoDto.senha().isBlank()) {
-            medico.setSenha((passwordEncoder.encode(medicoDto.senha())));
+        if (medicoDto.password() != null && !medicoDto.password().isBlank()) {
+            medico.setpassword((passwordEncoder.encode(medicoDto.password())));
         }
 
         Medico medicoSaveUpdate = medicoRepository.save(medico);

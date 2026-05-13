@@ -17,8 +17,8 @@ public record MedicoRequestDto(
         String email,
 
         @NotBlank(message = "A senha é obrigatória")
-        @Size(min = 6, message = "A senha deve ter no mínimo 6 caracteres")
-        String senha,
+        @Size(message = "A senha deve ter no mínimo 6 caracteres")
+        String password,
 
         String especialidade
 
