@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 nome: document.getElementById('nome').value,
                 crm: document.getElementById('crm').value,
                 email: document.getElementById('email').value,
-                senha: senha,
+                password: senha,
                 especialidade: document.getElementById('especialidade').value
             };
 
@@ -87,11 +87,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const loginData = {
                 email: document.getElementById('email').value,
-                senha: document.getElementById('senha').value
+                password: document.getElementById('senha').value
             };
 
             try {
-                const response = await fetch('http://localhost:8081/auth/login', {
+                const response = await fetch('http://localhost:8081/login', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(loginData)

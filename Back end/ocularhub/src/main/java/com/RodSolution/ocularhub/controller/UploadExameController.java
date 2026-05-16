@@ -11,6 +11,7 @@ import java.io.IOException;
 
 @RestController
 @RequestMapping("/exames")
+@CrossOrigin(origins = "*")
 public class UploadExameController {
 
     @Autowired

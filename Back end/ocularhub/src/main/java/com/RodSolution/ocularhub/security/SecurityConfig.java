@@ -25,17 +25,21 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-                .csrf(csrf -> csrf.disable()) // Obrigatório para APIs REST
-                .headers(headers -> headers.frameOptions(frame -> frame.disable()))
-                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .cors(cors -> {})
+                .csrf(csrf -> csrf.disable())
+                .sessionManagement(session ->
+                        session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                )
                 .authorizeHttpRequests(auth -> auth
+                        .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                         .requestMatchers("/login").permitAll()
+                        .requestMatchers("/medicos").permitAll()
                         .requestMatchers("/medicos/**").permitAll()
                         .requestMatchers("/assets/**", "/index.html", "/").permitAll()
                         .anyRequest().authenticated()
                 )
-                // Adiciona seu filtro de JWT na fila de processamento
-                .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
+                .addFilterBefore(jwtAuthenticationFilter,
+                        UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
     }
