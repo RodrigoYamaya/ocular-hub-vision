@@ -3,53 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OcularHub Vision - Inteligência em Saúde Ocular</title>
-    <link rel="stylesheet" href="../assets/css/home.css">
+    <title>OcularHub Vision - Central de Saúde Ocular</title>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-<header class="navbar">
+<header>
     <div class="logo">
         <h1>Ocular<span>Hub</span> Vision</h1>
     </div>
-    <nav>
-        <a href="login.html" class="btn-secondary">Acessar Sistema</a>
-        <a href="cadastro.html" class="btn-primary">Criar Conta</a>
-    </nav>
+    <div class="user-info">
+        <p>Olá, <span id="userName">Dr. Usuário</span> | <a href="pages/login.html" style="color: var(--accent-blue); font-size: 0.8rem; text-decoration: none;">Sair</a></p>
+    </div>
 </header>
 
-<main class="hero-section">
-    <div class="hero-content">
-        <h2>Triagem Inteligente de Retinografia em Segundos</h2>
-        <p>Utilizamos inteligência artificial para auxiliar oftalmologistas no diagnóstico precoce de patologias oculares.</p>
-        <div class="hero-btns">
-            <a href="cadastro.html" class="btn-main">Começar Agora</a>
-        </div>
-    </div>
+<nav>
+    <ul>
+        <!-- SINCRONIZADO: Caminhos apontando para a pasta pages -->
+        <li><a href="index.html" class="active">Novo Exame</a></li>
+        <li><a href="pages/pacientes.html">Pacientes</a></li>
+        <li><a href="pages/historico.html">Histórico</a></li>
+        <li><a href="pages/relatorio.html">Relatório final</a></li>
+        <li><a href="pages/novo_medico.html">Novo Médico</a></li>
+    </ul>
+</nav>
+
+<main>
+    <section class="upload-container">
+        <h2>Análise de Imagem Ocular</h2>
+        <p>Selecione a imagem da retina (Retinografia) para iniciar a triagem inteligente.</p>
+
+        <form class="upload-form" id="uploadForm">
+            <div class="drop-zone" id="dropZone">
+                <span class="drop-zone-text">Arraste a imagem ou clique aqui</span>
+                <input type="file" name="file" id="fileInput" class="file-input" accept="image/*">
+            </div>
+
+            <div id="uploadStatus" class="status-msg"></div>
+
+            <!-- SINCRONIZADO: O botão agora envia para o relatório final -->
+            <button type="button" class="btn-analisar" id="btnAnalisar" onclick="window.location.href='pages/relatorio.html'">Iniciar Análise</button>
+        </form>
+    </section>
 </main>
 
-<section id="sobre" class="about-section">
-    <div class="about-container">
-        <div class="about-text">
-            <h2>Tecnologia que Apoia o Diagnóstico</h2>
-            <p>O OcularHub Vision não substitui o médico, mas fornece uma segunda opinião baseada em milhares de casos analisados. Ganhe tempo na triagem e foque no tratamento do paciente.</p>
-        </div>
-        <div class="about-image">
-            <img src="../assets/img/oftalmo-tech.jpg" alt="Médico Oftalmologista analisando exame digital">
-        </div>
-    </div>
-</section>
-
-<section class="features">
-    <div class="feature-card">
-        <h3>🧠 IA Avançada</h3>
-        <p>Algoritmos treinados para identificar sinais sutis em exames de retina com alta precisão.</p>
-    </div>
-</section>
-
 <footer>
-    <p>&copy; 2026 OcularHub Vision - Inovação em Oftalmologia por RodSolution</p>
+    <p>&copy; 2026 OcularHub Vision - Desenvolvido por RodSolution</p>
 </footer>
 
+<script src="js/main.js"></script>
 </body>
 </html>

@@ -82,7 +82,7 @@
 }
 
 .tabela-dados th, .tabela-dados td {
-    padding: 18px 24px; /* Mais espaçamento interno */
+    padding: 18px 24px;
     text-align: left;
     border-bottom: 1px solid #f1f5f9;
 }
@@ -129,6 +129,7 @@
     font-size: 0.9rem;
     padding: 8px 16px;
     font-weight: 600;
+    cursor: pointer;
 }
 
 .linha-paciente {
