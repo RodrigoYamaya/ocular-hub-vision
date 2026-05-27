@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pacientes | OcularHub Vision - Central de Saúde Ocular</title>
+    
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+    
+    <link rel="stylesheet" href="../assets/css/pacientes.css">
+</head>
+<body class="dashboard-body">
+
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <h2>Ocular<span>Hub</span></h2>
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="pacientes.html" class="active">Pacientes</a></li>
+                <li><a href="historico.html">Histórico de Exames</a></li>
+                <li><a href="novo_medico.html">Cadastrar Médico</a></li>
+            </ul>
+        </nav>
+        <div class="sidebar-footer">
+            <a href="login.html" class="btn-logout">Sair do Sistema</a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topo-dashboard">
+            <h1>Gestão de Pacientes</h1>
+            <div class="perfil-medico">
+                <span class="avatar-icon">👤</span> <span>Dr. Usuário</span> 
+            </div>
+        </header>
+
+        <section class="conteudo-painel">
+            <div class="barra-acoes">
+                <div class="search-container">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" id="input-busca" class="input-pesquisa-moderna" placeholder="Buscar por nome ou CPF do paciente...">
+                </div>
+                <button class="btn-primario btn-nova-analise" onclick="window.location.href='relatorio.html'">
+                    <span>+</span> Nova Análise de Retina
+                </button>
+            </div>
+
+            <div class="tabela-container tabela-moderna">
+                <table class="tabela-dados">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome do Paciente</th>
+                            <th>Idade</th>
+                            <th>Última Consulta</th>
+                            <th class="acoes-header">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="corpo-tabela">
+                        <tr class="linha-paciente">
+                            <td class="id-cell">#1045</td>
+                            <td class="nome-paciente">Maria Oliveira Silva</td>
+                            <td class="idade-cell">58 anos</td>
+                            <td>20/05/2026</td>
+                            <td class="acoes-cell">
+                                <button class="btn-secundario btn-acao" onclick="window.location.href='historico.html'">Ver Prontuário</button>
+                            </td>
+                        </tr>
+                        <tr class="linha-paciente">
+                            <td class="id-cell">#1046</td>
+                            <td class="nome-paciente">Carlos Eduardo Gomes</td>
+                            <td class="idade-cell">62 anos</td>
+                            <td>24/05/2026</td>
+                            <td class="acoes-cell">
+                                <button class="btn-secundario btn-acao" onclick="window.location.href='historico.html'">Ver Prontuário</button>
+                            </td>
+                        </tr>
+                        <tr class="linha-paciente">
+                            <td class="id-cell">#1047</td>
+                            <td class="nome-paciente">Ana Beatriz Costa</td>
+                            <td class="idade-cell">45 anos</td>
+                            <td>26/05/2026</td>
+                            <td class="acoes-cell">
+                                <button class="btn-secundario btn-acao" onclick="window.location.href='historico.html'">Ver Prontuário</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div id="mensagem-vazia" style="display: none; padding: 30px; text-align: center; color: #64748b; font-weight: 500;">
+                    Nenhum paciente encontrado com este nome ou CPF.
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="../js/pacientes.js"></script>
+</body>
+</html>

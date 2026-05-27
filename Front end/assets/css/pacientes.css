@@ -1,0 +1,136 @@
+/* --- TOPO E PERFIL --- */
+.topo-dashboard h1 {
+    font-weight: 600;
+}
+
+.perfil-medico {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    background-color: #f1f5f9;
+}
+
+.avatar-icon {
+    font-size: 1.2rem;
+}
+
+/* --- BARRA DE FERRAMENTAS --- */
+.barra-acoes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    gap: 20px;
+}
+
+.search-container {
+    position: relative;
+    flex: 1;
+    max-width: 450px;
+}
+
+.search-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #64748b;
+    font-size: 1rem;
+}
+
+.input-pesquisa-moderna {
+    width: 100%;
+    padding: 12px 12px 12px 42px; 
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.2s ease;
+    background-color: #FFFFFF;
+}
+
+.input-pesquisa-moderna:focus {
+    border-color: #1D4ED8;
+    box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.1);
+}
+
+.btn-nova-analise {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+}
+
+.btn-nova-analise span {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+/* --- TABELA DOS PACIENTES --- */
+.tabela-container.tabela-moderna {
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.03);
+    overflow: hidden;
+}
+
+.tabela-dados {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabela-dados th, .tabela-dados td {
+    padding: 18px 24px; /* Mais espaçamento interno */
+    text-align: left;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.tabela-dados th {
+    background-color: #f8fafc;
+    color: #475569;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+}
+
+.tabela-dados tr:hover {
+    background-color: #fafbfd; 
+    transition: background-color 0.1s ease;
+}
+
+.id-cell {
+    color: #1D4ED8;
+    font-weight: bold;
+    width: 100px;
+}
+
+.nome-paciente {
+    font-weight: 500;
+    color: #1e293b;
+}
+
+.idade-cell {
+    color: #64748b;
+}
+
+.acoes-header {
+    text-align: right;
+}
+
+.acoes-cell {
+    text-align: right;
+    width: 180px;
+}
+
+.btn-acao {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+    font-weight: 600;
+}
+
+.linha-paciente {
+    transition: all 0.3s ease-in-out;
+}
