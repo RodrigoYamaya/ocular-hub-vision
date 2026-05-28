@@ -1,4 +1,3 @@
-/* --- TOPO E PERFIL --- */
 .topo-dashboard h1 {
     font-weight: 600;
 }
@@ -16,7 +15,6 @@
     font-size: 1.2rem;
 }
 
-/* --- BARRA DE FERRAMENTAS --- */
 .barra-acoes {
     display: flex;
     justify-content: space-between;
@@ -68,7 +66,6 @@
     font-weight: bold;
 }
 
-/* --- TABELA DOS PACIENTES --- */
 .tabela-container.tabela-moderna {
     background-color: #FFFFFF;
     border-radius: 12px;

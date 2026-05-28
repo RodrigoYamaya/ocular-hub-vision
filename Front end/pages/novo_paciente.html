@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Paciente | OcularHub Vision</title>
+    
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/novo_paciente.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>Ocular<span>Hub</span> Vision</h1>
+        </div>
+        <div class="user-info">
+            <p>Olá, <span>Dr. Rodrigo Yamaya</span> | <a href="login.html" style="color: #00aaff; font-size: 0.8rem; text-decoration: none;">Sair</a></p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Novo Exame</a></li>
+            <li><a href="pacientes.html" class="active">Pacientes</a></li>
+            <li><a href="historico.html">Histórico</a></li>
+            <li><a href="relatorio.html">Relatório final</a></li>
+        </ul>
+    </nav>
+
+    <main style="display: block; width: 100%;">
+        <div class="container-cadastro">
+            <h2>Cadastrar Novo Paciente</h2>
+            
+            <form onsubmit="event.preventDefault(); alert('Paciente cadastrado com sucesso!'); window.location.href='pacientes.html';">
+                <div class="grupo-input">
+                    <label>Nome Completo</label>
+                    <input type="text" required placeholder="Ex: João da Silva">
+                </div>
+                
+                <div style="display: flex; gap: 15px;">
+                    <div class="grupo-input" style="flex: 1;">
+                        <label>CPF</label>
+                        <input type="text" required placeholder="000.000.000-00">
+                    </div>
+                    <div class="grupo-input" style="flex: 1;">
+                        <label>Data de Nascimento</label>
+                        <input type="date" required>
+                    </div>
+                </div>
+
+                <div class="grupo-input">
+                    <label>Observações Prévias (Opcional)</label>
+                    <textarea rows="4" placeholder="Comorbidades, histórico familiar..."></textarea>
+                </div>
+
+                <div class="botoes-form">
+                    <a href="pacientes.html" class="btn-cancelar">Cancelar</a>
+                    <button type="submit" class="btn-salvar">Salvar Cadastro</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 OcularHub Vision - Desenvolvido por RodSolution</p>
+    </footer>
+
+</body>
+</html>

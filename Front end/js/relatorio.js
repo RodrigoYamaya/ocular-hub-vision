@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (btnImprimir) {
         btnImprimir.addEventListener('click', () => {
-            // Chama a função nativa de impressão do navegador
             window.print();
         });
     }

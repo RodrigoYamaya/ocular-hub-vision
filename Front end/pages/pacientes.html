@@ -36,7 +36,6 @@
             <li><a href="pacientes.html" class="active">Pacientes</a></li>
             <li><a href="historico.html">Histórico</a></li>
             <li><a href="relatorio.html">Relatório final</a></li>
-            <li><a href="novo_medico.html">Novo Médico</a></li>
         </ul>
     </nav>
 
@@ -52,9 +51,15 @@
                     <span class="search-icon">🔍</span>
                     <input type="text" id="input-busca" class="input-pesquisa-moderna" placeholder="Buscar por nome ou CPF do paciente...">
                 </div>
-                <button class="btn-primario btn-nova-analise" onclick="window.location.href='../index.html'">
-                    <span>+</span> Nova Análise
-                </button>
+                
+                <div style="display: flex; gap: 15px;">
+                    <button class="btn-secundario btn-acao" onclick="window.location.href='novo_paciente.html'" style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                        <span style="font-size: 1.2rem; font-weight: bold;">+</span> Novo Paciente
+                    </button>
+                    <button class="btn-primario btn-nova-analise" onclick="window.location.href='../index.html'">
+                        <span>+</span> Nova Análise
+                    </button>
+                </div>
             </div>
 
             <div class="tabela-container tabela-moderna">
