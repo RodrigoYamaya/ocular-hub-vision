@@ -3,41 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pacientes | OcularHub Vision - Central de Saúde Ocular</title>
+    <title>Pacientes | OcularHub Vision</title>
     
     <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/dashboard.css">
     <link rel="stylesheet" href="../assets/css/pacientes.css">
+
+    <style>
+        main.layout-lista {
+            display: block; 
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            padding: 40px 20px;
+            flex: 1;
+        }
+    </style>
 </head>
-<body class="dashboard-body">
+<body>
 
-    <aside class="sidebar">
-        <div class="sidebar-logo">
-            <h2>Ocular<span>Hub</span></h2>
+    <header>
+        <div class="logo">
+            <h1>Ocular<span>Hub</span> Vision</h1>
         </div>
+        <div class="user-info">
+            <p>Olá, <span id="userName">Dr. Rodrigo Yamaya</span> | <a href="login.html" style="color: #00aaff; font-size: 0.8rem; text-decoration: none;">Sair</a></p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Novo Exame</a></li>
+            <li><a href="pacientes.html" class="active">Pacientes</a></li>
+            <li><a href="historico.html">Histórico</a></li>
+            <li><a href="relatorio.html">Relatório final</a></li>
+            <li><a href="novo_medico.html">Novo Médico</a></li>
+        </ul>
+    </nav>
+
+    <main class="layout-lista">
         
-        <nav class="sidebar-nav">
-            <ul>
-                <li><a href="../index.html">Novo Exame</a></li> 
-                <li><a href="pacientes.html" class="active">Pacientes</a></li>
-                <li><a href="historico.html">Histórico</a></li>
-                <li><a href="relatorio.html">Relatório final</a></li>
-                <li><a href="novo_medico.html">Novo Médico</a></li>
-            </ul>
-        </nav>
-
-        <div class="sidebar-footer">
-            <a href="login.html" class="btn-logout">Sair do Sistema</a>
+        <div style="margin-bottom: 20px;">
+            <h2 style="color: #003366;">Gestão de Pacientes</h2>
         </div>
-    </aside>
-
-    <main class="main-content">
-        <header class="topo-dashboard">
-            <h1>Gestão de Pacientes</h1>
-            <div class="perfil-medico">
-                <span class="avatar-icon">👤</span> <span>Dr. Usuário</span> 
-            </div>
-        </header>
 
         <section class="conteudo-painel">
             <div class="barra-acoes">
@@ -46,7 +53,7 @@
                     <input type="text" id="input-busca" class="input-pesquisa-moderna" placeholder="Buscar por nome ou CPF do paciente...">
                 </div>
                 <button class="btn-primario btn-nova-analise" onclick="window.location.href='../index.html'">
-                    <span>+</span> Nova Análise de Retina
+                    <span>+</span> Nova Análise
                 </button>
             </div>
 
@@ -97,6 +104,10 @@
             </div>
         </section>
     </main>
+
+    <footer>
+        <p>&copy; 2026 OcularHub Vision - Desenvolvido por RodSolution</p>
+    </footer>
 
     <script src="../js/pacientes.js"></script>
 </body>

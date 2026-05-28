@@ -6,36 +6,45 @@
     <title>Histórico | OcularHub Vision</title>
     
     <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/dashboard.css">
     <link rel="stylesheet" href="../assets/css/historico.css">
+
+    <style>
+        main.layout-lista {
+            display: block; 
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            padding: 40px 20px;
+            flex: 1;
+        }
+    </style>
 </head>
-<body class="dashboard-body">
+<body>
 
-    <aside class="sidebar">
-        <div class="sidebar-logo">
-            <h2>Ocular<span>Hub</span></h2>
+    <header>
+        <div class="logo">
+            <h1>Ocular<span>Hub</span> Vision</h1>
         </div>
-        <nav class="sidebar-nav">
-            <ul>
-                <li><a href="../index.html">Novo Exame</a></li>
-                <li><a href="pacientes.html">Pacientes</a></li>
-                <li><a href="historico.html" class="active">Histórico</a></li>
-                <li><a href="relatorio.html">Relatório final</a></li>
-                <li><a href="novo_medico.html">Novo Médico</a></li>
-            </ul>
-        </nav>
-        <div class="sidebar-footer">
-            <a href="login.html" class="btn-logout">Sair do Sistema</a>
+        <div class="user-info">
+            <p>Olá, <span id="userName">Dr. Rodrigo Yamaya</span> | <a href="login.html" style="color: #00aaff; font-size: 0.8rem; text-decoration: none;">Sair</a></p>
         </div>
-    </aside>
+    </header>
 
-    <main class="main-content">
-        <header class="topo-dashboard">
-            <h1>Histórico de Análises Detalhado</h1>
-            <div class="perfil-medico">
-                <span class="avatar-icon">👤</span> <span>Dr. Usuário</span> 
-            </div>
-        </header>
+    <nav>
+        <ul>
+            <li><a href="../index.html">Novo Exame</a></li>
+            <li><a href="pacientes.html">Pacientes</a></li>
+            <li><a href="historico.html" class="active">Histórico</a></li>
+            <li><a href="relatorio.html">Relatório final</a></li>
+            <li><a href="novo_medico.html">Novo Médico</a></li>
+        </ul>
+    </nav>
+
+    <main class="layout-lista">
+        
+        <div style="margin-bottom: 20px;">
+            <h2 style="color: #003366;">Histórico de Análises Detalhado</h2>
+        </div>
 
         <section class="conteudo-painel">
             <div class="barra-acoes barra-detalhada">
@@ -135,6 +144,10 @@
             </div>
         </section>
     </main>
+
+    <footer>
+        <p>&copy; 2026 OcularHub Vision - Desenvolvido por RodSolution</p>
+    </footer>
 
     <script src="../js/historico.js"></script>
 </body>

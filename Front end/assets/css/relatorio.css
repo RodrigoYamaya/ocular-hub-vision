@@ -1,0 +1,183 @@
+/* =========================================
+   ESTILOS PREMIUM: RELATÓRIO FINAL E IMPRESSÃO
+   ========================================= */
+
+/* --- CONTAINER PRINCIPAL DO LAUDO --- */
+.relatorio-container {
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+    padding: 40px;
+    border: 1px solid #e2e8f0;
+    border-top: 6px solid #1D4ED8; /* Linha de destaque no topo */
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* --- CABEÇALHO DO LAUDO --- */
+.cabecalho-laudo {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+.cabecalho-laudo h2 {
+    color: #0f172a;
+    font-size: 1.6rem;
+    margin-bottom: 5px;
+}
+
+.data-laudo {
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+.info-paciente-laudo p {
+    margin: 4px 0;
+    color: #334155;
+    font-size: 0.95rem;
+}
+
+.info-paciente-laudo span {
+    font-weight: 600;
+    color: #64748b;
+}
+
+/* --- GRID DO RELATÓRIO (DUAS COLUNAS) --- */
+.relatorio-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+/* Coluna da Imagem */
+.box-imagem {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.imagem-placeholder {
+    color: #94a3b8;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.legenda-imagem p {
+    font-size: 0.85rem;
+    color: #475569;
+    margin: 4px 0;
+}
+
+/* Coluna de Dados */
+.bloco-diagnostico {
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Estilo para Diagnóstico Grave */
+.bloco-diagnostico.grave {
+    background-color: #fef2f2;
+    border: 1px solid #fecaca;
+}
+
+.bloco-diagnostico h3 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: #64748b;
+    margin-bottom: 10px;
+    letter-spacing: 0.05em;
+}
+
+.resultado-destaque {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.resultado-destaque h4 {
+    color: #991b1b;
+    font-size: 1.4rem;
+    margin: 0;
+}
+
+.score-ia {
+    font-size: 0.95rem;
+    color: #b91c1c;
+}
+
+.bloco-detalhes, .bloco-recomendacao {
+    margin-bottom: 20px;
+}
+
+.bloco-detalhes h3, .bloco-recomendacao h3 {
+    font-size: 1rem;
+    color: #1e293b;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+}
+
+.lista-achados {
+    padding-left: 20px;
+    color: #334155;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.bloco-recomendacao p {
+    color: #334155;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* --- RODAPÉ DO LAUDO --- */
+.rodape-laudo {
+    border-top: 1px solid #f1f5f9;
+    padding-top: 20px;
+    text-align: justify;
+}
+
+.rodape-laudo p {
+    font-size: 0.8rem;
+    color: #94a3b8;
+}
+
+/* =========================================
+   REGRAS DE IMPRESSÃO (MAGIA DO CSS)
+   ========================================= */
+@media print {
+    /* Esconde o menu lateral, topo escuro, botões e barras de rolagem */
+    .sidebar, .topo-dashboard, .no-print {
+        display: none !important;
+    }
+
+    /* Expande a área de conteúdo para ocupar a folha A4 inteira */
+    .dashboard-body, .main-content {
+        height: auto;
+        overflow: visible;
+        background-color: #FFFFFF;
+    }
+
+    /* Tira a sombra e o espaço em volta do laudo para a impressão ficar limpa */
+    .relatorio-container {
+        box-shadow: none;
+        border: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        max-width: 100%;
+    }
+}
