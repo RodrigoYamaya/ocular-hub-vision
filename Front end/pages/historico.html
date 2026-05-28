@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórico | OcularHub Vision</title>
+    
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+    <link rel="stylesheet" href="../assets/css/historico.css">
+</head>
+<body class="dashboard-body">
+
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <h2>Ocular<span>Hub</span></h2>
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="../index.html">Novo Exame</a></li>
+                <li><a href="pacientes.html">Pacientes</a></li>
+                <li><a href="historico.html" class="active">Histórico</a></li>
+                <li><a href="relatorio.html">Relatório final</a></li>
+                <li><a href="novo_medico.html">Novo Médico</a></li>
+            </ul>
+        </nav>
+        <div class="sidebar-footer">
+            <a href="login.html" class="btn-logout">Sair do Sistema</a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topo-dashboard">
+            <h1>Histórico de Análises Detalhado</h1>
+            <div class="perfil-medico">
+                <span class="avatar-icon">👤</span> <span>Dr. Usuário</span> 
+            </div>
+        </header>
+
+        <section class="conteudo-painel">
+            <div class="barra-acoes barra-detalhada">
+                <div class="filtros-grupo">
+                    <div class="search-container busca-larga">
+                        <span class="search-icon">🔍</span>
+                        <input type="text" id="input-busca-historico" class="input-pesquisa-moderna" placeholder="Buscar por paciente, ID, olho ou data...">
+                    </div>
+                    <select id="filtro-status" class="select-moderno">
+                        <option value="todos">Todos os Diagnósticos</option>
+                        <option value="grave">🔴 Grave</option>
+                        <option value="moderado">🟡 Sinais Suspeitos</option>
+                        <option value="normal">🟢 Normal</option>
+                    </select>
+                </div>
+                
+                <button class="btn-primario btn-nova-analise" onclick="window.location.href='../index.html'">
+                    <span>+</span> Nova Análise
+                </button>
+            </div>
+
+            <div class="tabela-container tabela-moderna">
+                <table class="tabela-dados">
+                    <thead>
+                        <tr>
+                            <th>Data e Hora</th>
+                            <th>Paciente (ID)</th>
+                            <th>Região Analisada</th>
+                            <th>Diagnóstico da IA</th>
+                            <th>Precisão</th>
+                            <th class="acoes-header">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="corpo-tabela-historico">
+                        <tr class="linha-historico" data-status="grave">
+                            <td class="data-cell">
+                                <strong>26/05/2026</strong><br>
+                                <span class="texto-secundario">14:30</span>
+                            </td>
+                            <td>
+                                <span class="nome-paciente">Ana Beatriz Costa</span><br>
+                                <span class="texto-secundario">ID: #1047</span>
+                            </td>
+                            <td>
+                                <span class="detalhe-exame">Olho Direito (OD)</span><br>
+                                <span class="texto-secundario">Retinografia Colorida</span>
+                            </td>
+                            <td><span class="badge badge-grave">🔴 Detecção Grave</span></td>
+                            <td><strong>98.5%</strong></td>
+                            <td class="acoes-cell">
+                                <button class="btn-secundario btn-acao" onclick="window.location.href='relatorio.html'">Ver Laudo</button>
+                            </td>
+                        </tr>
+                        <tr class="linha-historico" data-status="moderado">
+                            <td class="data-cell">
+                                <strong>24/05/2026</strong><br>
+                                <span class="texto-secundario">09:15</span>
+                            </td>
+                            <td>
+                                <span class="nome-paciente">Carlos Eduardo Gomes</span><br>
+                                <span class="texto-secundario">ID: #1046</span>
+                            </td>
+                            <td>
+                                <span class="detalhe-exame">Olho Esquerdo (OE)</span><br>
+                                <span class="texto-secundario">Retinografia Colorida</span>
+                            </td>
+                            <td><span class="badge badge-moderado">🟡 Sinais Suspeitos</span></td>
+                            <td><strong>89.2%</strong></td>
+                            <td class="acoes-cell">
+                                <button class="btn-secundario btn-acao" onclick="window.location.href='relatorio.html'">Ver Laudo</button>
+                            </td>
+                        </tr>
+                        <tr class="linha-historico" data-status="normal">
+                            <td class="data-cell">
+                                <strong>20/05/2026</strong><br>
+                                <span class="texto-secundario">16:45</span>
+                            </td>
+                            <td>
+                                <span class="nome-paciente">Maria Oliveira Silva</span><br>
+                                <span class="texto-secundario">ID: #1045</span>
+                            </td>
+                            <td>
+                                <span class="detalhe-exame">Ambos (AO)</span><br>
+                                <span class="texto-secundario">Retinografia Colorida</span>
+                            </td>
+                            <td><span class="badge badge-normal">🟢 Normal</span></td>
+                            <td><strong>99.1%</strong></td>
+                            <td class="acoes-cell">
+                                <button class="btn-secundario btn-acao" onclick="window.location.href='relatorio.html'">Ver Laudo</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div id="mensagem-vazia-historico" style="display: none; padding: 30px; text-align: center; color: #64748b; font-weight: 500;">
+                    Nenhum exame encontrado com estes filtros.
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="../js/historico.js"></script>
+</body>
+</html>
