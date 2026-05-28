@@ -1,0 +1,125 @@
+/* =========================================
+   ESTILOS DA TELA DE NOVO MÉDICO
+   ========================================= */
+.container-cadastro-medico {
+    background: white;
+    padding: 3rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    max-width: 650px;
+    width: 100%;
+    margin: 2rem auto; 
+}
+
+.container-cadastro-medico h2 {
+    color: #003366;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #e6f7ff;
+    padding-bottom: 10px;
+}
+
+.grupo-input {
+    margin-bottom: 1.2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.linha-inputs {
+    display: flex;
+    gap: 15px;
+}
+
+.linha-inputs .grupo-input {
+    flex: 1;
+}
+
+.grupo-input label {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.grupo-input input {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: all 0.2s;
+}
+
+.grupo-input input:focus {
+    outline: none;
+    border-color: #00aaff;
+    box-shadow: 0 0 5px rgba(0, 170, 255, 0.2);
+}
+
+.botoes-form {
+    display: flex;
+    gap: 15px;
+    margin-top: 2rem;
+}
+
+.btn-salvar {
+    flex: 2;
+    background-color: #003366;
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 1rem;
+}
+
+.btn-salvar:hover:not(:disabled) {
+    background-color: #002244;
+}
+
+.btn-salvar:disabled {
+    background-color: #94a3b8;
+    cursor: not-allowed;
+}
+
+.btn-cancelar {
+    flex: 1;
+    background-color: transparent;
+    color: #666;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-cancelar:hover {
+    background-color: #f4f7f9;
+}
+
+/* Mensagens de Sucesso/Erro vindas do auth.js */
+.status-msg {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    display: none; /* Escondido por padrão, o JS ativa */
+}
+
+.status-msg.error {
+    display: block;
+    background-color: #fee2e2;
+    color: #dc2626;
+    border: 1px solid #f87171;
+}
+
+.status-msg.success {
+    display: block;
+    background-color: #dcfce3;
+    color: #16a34a;
+    border: 1px solid #4ade80;
+}
