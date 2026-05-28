@@ -130,5 +130,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 btnEntrar.disabled = false;
             }
         });
-    }
+    }    
 });
+
+function entrarComoAvaliador() {
+    localStorage.setItem('medicoNome', 'Dr. Avaliador (Teste)');
+    
+    const mensagemDiv = document.getElementById('mensagem');
+    if (mensagemDiv) {
+        mensagemDiv.innerText = "Acesso de avaliação liberado! Entrando...";
+        mensagemDiv.className = "status-msg success";
+        mensagemDiv.style.display = "block";
+        mensagemDiv.style.color = "green";
+        mensagemDiv.style.marginTop = "15px";
+        mensagemDiv.style.textAlign = "center";
+    }
+
+    setTimeout(() => {
+        window.location.href = "../index.html";
+    }, 1000);
+}
