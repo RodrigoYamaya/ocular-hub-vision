@@ -1,0 +1,6 @@
+# Ignora qualquer pasta node_modules no projeto inteiro
+node_modules/
+
+# Ignora os vídeos e prints pesados do Cypress
+cypress/videos/
+cypress/screenshots/
