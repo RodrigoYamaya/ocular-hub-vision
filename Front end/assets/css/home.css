@@ -178,10 +178,24 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .video-section {
-        padding: 3rem 5%;
+    .navbar { 
+        flex-direction: column; 
+        gap: 15px;
+        padding: 1rem;
     }
-    .video-container h2 {
-        font-size: 2rem;
+    
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .nav-links a {
+        margin-left: 0; 
+        width: 100%;
+        text-align: center;
+        display: block;
+        padding: 10px 0;
     }
 }

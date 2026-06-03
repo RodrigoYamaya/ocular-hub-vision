@@ -155,29 +155,39 @@
     color: #94a3b8;
 }
 
-/* =========================================
-   REGRAS DE IMPRESSÃO (MAGIA DO CSS)
-   ========================================= */
-@media print {
-    /* Esconde o menu lateral, topo escuro, botões e barras de rolagem */
-    .sidebar, .topo-dashboard, .no-print {
-        display: none !important;
-    }
 
-    /* Expande a área de conteúdo para ocupar a folha A4 inteira */
-    .dashboard-body, .main-content {
-        height: auto;
-        overflow: visible;
-        background-color: #FFFFFF;
-    }
-
-    /* Tira a sombra e o espaço em volta do laudo para a impressão ficar limpa */
+@media (max-width: 768px) {
     .relatorio-container {
-        box-shadow: none;
-        border: none;
-        padding: 0;
-        margin: 0;
+        padding: 20px;
+        border-radius: 8px;
+    }
+
+    .cabecalho-laudo {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .cabecalho-laudo h2 {
+        font-size: 1.4rem;
+    }
+
+    .relatorio-grid {
+        grid-template-columns: 1fr; 
+        gap: 20px;
+    }
+
+    .box-imagem {
+        height: 250px;
+    }
+
+    .barra-acoes {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+    
+    .barra-acoes button {
+        margin-right: 0 !important;
         width: 100%;
-        max-width: 100%;
     }
 }

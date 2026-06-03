@@ -132,3 +132,38 @@
 .linha-paciente {
     transition: all 0.3s ease-in-out;
 }
+
+
+@media (max-width: 768px) {
+    .barra-acoes {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+    }
+
+    .search-container, .input-pesquisa-moderna {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .barra-acoes > div:nth-child(2) {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .barra-acoes button {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .tabela-container.tabela-moderna {
+        width: 100%;
+        overflow-x: auto; 
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .tabela-dados {
+        min-width: 650px; 
+    }
+}

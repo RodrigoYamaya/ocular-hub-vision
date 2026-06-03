@@ -79,3 +79,45 @@
 .btn-cancelar:hover {
     background-color: #f4f7f9;
 }
+
+@media (max-width: 768px) {
+    .container-cadastro, 
+    .container-cadastro-medico {
+        width: 90% !important;
+        padding: 20px;
+        margin: 20px auto;
+        box-sizing: border-box;
+    }
+
+    .linha-inputs {
+        display: flex;
+        flex-direction: column !important;
+        gap: 0; 
+        width: 100%;
+    }
+
+    .grupo-input {
+        width: 100%;
+    }
+    
+    .grupo-input input, 
+    .grupo-input select, 
+    .grupo-input textarea {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .botoes-form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .botoes-form a, 
+    .botoes-form button {
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+    }
+}
