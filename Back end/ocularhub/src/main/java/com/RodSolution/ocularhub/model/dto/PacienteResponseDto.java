@@ -7,6 +7,6 @@ public record PacienteResponseDto(
         String nome,
         String cpf,
         LocalDate dataNascimento,
-        String observacoes
+        String observacao
 ) {
 }

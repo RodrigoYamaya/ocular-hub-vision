@@ -19,6 +19,6 @@ public record PacienteRequestDto(
         LocalDate dataNascimento,
 
         @Size(max = 500, message = "As observações devem ter no máximo 500 caracteres")
-        String observacoes
+        String observacao
 ) {
 }
