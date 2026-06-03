@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import java.time.LocalDate;
 
 @Entity
+//@Entity lembrar-se E uma anotação que vai ele indicar para Hibernate que essa classe que vai ser mapeada para tabela no banco de daods. jPA SO VAI INSTRUIR QUE COM @anotação Entity. O JPA NAO EXECUTA NADA.
 @Table(name = "tb_pacientes")
 public class Paciente {
     @Id
