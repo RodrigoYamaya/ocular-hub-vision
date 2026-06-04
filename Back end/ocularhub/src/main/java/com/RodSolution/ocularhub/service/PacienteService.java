@@ -64,7 +64,7 @@ public class PacienteService {
         paciente.setNome(dto.nome());
         paciente.setCpf(dto.cpf());
         paciente.setDataNascimento(dto.dataNascimento());
-        paciente.setObservação(dto.observacao());
+        paciente.setObservacao(dto.observacao());
 
         Paciente pacienteSaveUpdate = pacienteRepository.save(paciente);
         return pacienteMapper.toDto(pacienteSaveUpdate);

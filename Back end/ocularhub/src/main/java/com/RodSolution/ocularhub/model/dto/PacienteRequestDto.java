@@ -12,7 +12,7 @@ public record PacienteRequestDto(
         String nome,
 
         @NotBlank(message = "O CPF é obrigatório")
-        @CPF(message = "Formato de CPF inválido")
+        //@CPF(message = "Formato de CPF inválido")
         String cpf,
 
         @NotNull(message = "A data de nascimento é obrigatória")
