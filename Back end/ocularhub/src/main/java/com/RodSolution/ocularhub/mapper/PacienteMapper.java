@@ -1,6 +1,6 @@
 package com.RodSolution.ocularhub.mapper;
 
-import com.RodSolution.ocularhub.model.Paciente;
+import com.RodSolution.ocularhub.model.entities.Paciente;
 import com.RodSolution.ocularhub.model.dto.PacienteRequestDto;
 import com.RodSolution.ocularhub.model.dto.PacienteResponseDto;
 import org.mapstruct.Mapper;

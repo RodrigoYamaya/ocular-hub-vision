@@ -1,6 +1,6 @@
 package com.RodSolution.ocularhub.controller;
 
-import com.RodSolution.ocularhub.model.UploadExame;
+import com.RodSolution.ocularhub.model.entities.UploadExame;
 import com.RodSolution.ocularhub.service.UploadService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

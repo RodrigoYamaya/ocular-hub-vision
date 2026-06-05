@@ -1,4 +1,4 @@
-package com.RodSolution.ocularhub.model;
+package com.RodSolution.ocularhub.model.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;

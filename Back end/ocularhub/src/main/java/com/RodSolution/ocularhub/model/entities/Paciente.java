@@ -1,4 +1,4 @@
-package com.RodSolution.ocularhub.model;
+package com.RodSolution.ocularhub.model.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -16,6 +16,9 @@ public class Paciente {
 
     @Column(nullable = false)
     private String nome;
+
+    @Column(name = "idade")
+    private Integer idade;
     
     @Column(nullable = false, unique = true, length = 14)
     private String cpf;

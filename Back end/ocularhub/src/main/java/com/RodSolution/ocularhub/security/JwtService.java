@@ -1,6 +1,6 @@
 package com.RodSolution.ocularhub.security;
 
-import com.RodSolution.ocularhub.model.Medico;
+import com.RodSolution.ocularhub.model.entities.Medico;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.interfaces.DecodedJWT;

@@ -2,7 +2,7 @@ package com.RodSolution.ocularhub.service;
 
 import com.RodSolution.ocularhub.exceptions.RecursoNaoEncontradoException;
 import com.RodSolution.ocularhub.mapper.MedicoMapper;
-import com.RodSolution.ocularhub.model.Medico;
+import com.RodSolution.ocularhub.model.entities.Medico;
 import com.RodSolution.ocularhub.model.dto.MedicoRequestDto;
 import com.RodSolution.ocularhub.model.dto.MedicoResponseDto;
 import com.RodSolution.ocularhub.repository.MedicoRepository;

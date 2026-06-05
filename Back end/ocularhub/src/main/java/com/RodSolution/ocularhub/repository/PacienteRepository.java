@@ -1,6 +1,6 @@
 package com.RodSolution.ocularhub.repository;
 
-import com.RodSolution.ocularhub.model.Paciente;
+import com.RodSolution.ocularhub.model.entities.Paciente;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 

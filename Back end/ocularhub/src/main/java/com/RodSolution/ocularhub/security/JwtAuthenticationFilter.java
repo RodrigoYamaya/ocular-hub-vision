@@ -1,6 +1,6 @@
 package com.RodSolution.ocularhub.security;
 
-import com.RodSolution.ocularhub.model.Medico;
+import com.RodSolution.ocularhub.model.entities.Medico;
 import com.RodSolution.ocularhub.repository.MedicoRepository;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

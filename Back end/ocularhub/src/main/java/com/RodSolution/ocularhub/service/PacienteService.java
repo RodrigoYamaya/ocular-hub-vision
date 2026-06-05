@@ -2,7 +2,7 @@ package com.RodSolution.ocularhub.service;
 
 import com.RodSolution.ocularhub.exceptions.RecursoNaoEncontradoException;
 import com.RodSolution.ocularhub.mapper.PacienteMapper;
-import com.RodSolution.ocularhub.model.Paciente;
+import com.RodSolution.ocularhub.model.entities.Paciente;
 import com.RodSolution.ocularhub.model.dto.PacienteRequestDto;
 import com.RodSolution.ocularhub.model.dto.PacienteResponseDto;
 import com.RodSolution.ocularhub.repository.PacienteRepository;
@@ -62,6 +62,7 @@ public class PacienteService {
         }
 
         paciente.setNome(dto.nome());
+        paciente.setIdade(dto.idade());
         paciente.setCpf(dto.cpf());
         paciente.setDataNascimento(dto.dataNascimento());
         paciente.setObservacao(dto.observacao());

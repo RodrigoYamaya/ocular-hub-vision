@@ -1,6 +1,7 @@
 package com.RodSolution.ocularhub.model.dto;
 
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import org.hibernate.validator.constraints.br.CPF;
@@ -10,6 +11,9 @@ import java.time.LocalDate;
 public record PacienteRequestDto(
         @NotBlank(message = "O nome é obrigatório")
         String nome,
+
+        @NotNull(message= "idade e obrigatorio")
+        Integer idade,
 
         @NotBlank(message = "O CPF é obrigatório")
         //@CPF(message = "Formato de CPF inválido")
