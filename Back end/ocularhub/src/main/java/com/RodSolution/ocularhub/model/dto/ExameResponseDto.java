@@ -8,7 +8,7 @@ public record ExameResponseDto(
         String regiaoAnalisada,
         Double precisaoIa,
         String diagnosticoIa,
-        String status, 
+        String status,
         LocalDateTime dataRegistro,
         Long pacienteId
 ) {
