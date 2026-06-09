@@ -36,6 +36,7 @@ public class SecurityConfig {
                         .requestMatchers("/medicos", "/medicos/**").permitAll()
                         .requestMatchers("/pacientes", "/pacientes/**").permitAll()
                         .requestMatchers("/consultas","/consultas/**").permitAll()
+                        .requestMatchers("/exames","/exames/**").permitAll()
                         .requestMatchers("/assets/**", "/index.html", "/").permitAll()
                         .anyRequest().authenticated()
                 )
