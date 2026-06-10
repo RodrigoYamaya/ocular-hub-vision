@@ -55,4 +55,13 @@ public class ExameController {
     }
 
 
+    @PostMapping(value = "/com-imagem", consumes = org.springframework.http.MediaType.MULTIPART_FORM_DATA_VALUE)
+    public ResponseEntity<ExameResponseDto> criarExameComImagem(
+            @RequestPart("dados") @Valid ExameRequestDto dto,
+            @RequestPart("imagem") org.springframework.web.multipart.MultipartFile imagem) {
+
+        ExameResponseDto exameSaved = exameService.salvarExameComAnaliseIa(dto, imagem);
+        return ResponseEntity.status(HttpStatus.CREATED).body(exameSaved);
+    }
+
 }
