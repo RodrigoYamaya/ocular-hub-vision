@@ -6,11 +6,13 @@ import com.RodSolution.ocularhub.model.dto.ExameRequestDto;
 import com.RodSolution.ocularhub.model.dto.ExameResponseDto;
 import com.RodSolution.ocularhub.model.entities.Exame;
 import com.RodSolution.ocularhub.model.entities.Paciente;
+import com.RodSolution.ocularhub.model.enums.StatusExame;
 import com.RodSolution.ocularhub.repository.ExameRepository;
 import com.RodSolution.ocularhub.repository.PacienteRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -27,6 +29,9 @@ public class ExameService {
 
     @Autowired
     private PacienteRepository pacienteRepository;
+
+    @Autowired
+    private GeminiService geminiService;
 
     
     public ExameResponseDto findById(Long id) {
@@ -90,9 +95,29 @@ public class ExameService {
 
     @Transactional
     public void deletar(Long id) {
-        Exame exame = exameRepository.findById(id)
-                .orElseThrow(() -> new RecursoNaoEncontradoException("Exame não encontrado com ID: " + id));
-        exameRepository.delete(exame);
+        if(!exameRepository.existsById(id)) {
+            throw new RecursoNaoEncontradoException("exame com o ID " + id + " não encontrado");
+        }
+        exameRepository.deleteById(id);
+    }
+
+    @Transactional
+    public ExameResponseDto salvarExameComAnaliseIa(ExameRequestDto exameDto, MultipartFile imagem) {
+        Paciente paciente = pacienteRepository.findById(exameDto.pacienteId())
+                .orElseThrow(() -> new RecursoNaoEncontradoException("Paciente não encontrado com ID: " + exameDto.pacienteId()));
+
+        Exame exame = exameMapper.toEntity(exameDto);
+        exame.setPaciente(paciente);
+
+        // 3.AQUI: Se veio imagem, manda pra IA ler!
+        if (imagem != null && !imagem.isEmpty()) {
+            String laudoIa = geminiService.gerarAnaliseComImagem(exame.getTitulo(), exame.getRegiaoAnalisada(), imagem);
+            exame.setDiagnosticoIa(laudoIa);
+            exame.setStatus(StatusExame.CONCLUIDO);
+        }
+
+        Exame salvo = exameRepository.save(exame);
+        return exameMapper.toDto(salvo);
     }
 
 }

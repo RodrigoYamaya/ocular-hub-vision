@@ -14,7 +14,8 @@ import org.springframework.web.multipart.MultipartFile;
 @Service
 public class GeminiService {
 
-    //Vamos usar final para evitar que nao seja alterado em tempo execução,Assim garantido que objeto nao seja quando instanciado
+    // Usamos final para garantir que a REFERÊNCIA do objeto não seja alterada em tempo de execução.
+   // Isso impede que a variável aponte para outro objeto após ser instanciada.
     private final ChatModel chatModel;
 
     // Injeção via construtor (Boa prática recomendada pelo Spring).Melhor que autowired

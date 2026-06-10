@@ -2,6 +2,7 @@ package com.RodSolution.ocularhub.controller;
 
 import com.RodSolution.ocularhub.model.dto.ExameRequestDto;
 import com.RodSolution.ocularhub.model.dto.ExameResponseDto;
+import com.RodSolution.ocularhub.model.entities.Exame;
 import com.RodSolution.ocularhub.service.ExameService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,8 +49,9 @@ public class ExameController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity deletar(@PathVariable Long id) {
-        return ResponseEntity.ok().build();
+    public ResponseEntity<?> delete(@PathVariable(value = "id") long id) {
+        exameService.deletar(id);
+        return ResponseEntity.status(HttpStatus.OK).body("exame com o ID " + id + " deletado com sucesso.");
     }
 
 
