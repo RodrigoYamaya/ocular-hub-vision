@@ -36,15 +36,20 @@
         <p>Selecione a imagem da retina (Retinografia) para iniciar a triagem inteligente.</p>
 
         <form class="upload-form" id="uploadForm">
+            <input type="hidden" id="pacienteId" value="1"> <input type="hidden" id="titulo" value="Exame de Rotina">
+            <input type="hidden" id="regiao" value="Olho Direito">
+
             <div class="drop-zone" id="dropZone">
                 <span class="drop-zone-text">Arraste a imagem ou clique aqui</span>
-                <input type="file" name="file" id="fileInput" class="file-input" accept="image/*">
+                <input type="file" name="file" id="fileInput" class="file-input" accept="image/*" required>
             </div>
 
             <div id="uploadStatus" class="status-msg"></div>
 
-            <button type="button" class="btn-analisar" id="btnAnalisar" onclick="window.location.href='pages/relatorio.html'">Iniciar Análise</button>
+            <button type="submit" class="btn-analisar" id="btnAnalisar">Iniciar Análise</button>
         </form>
+
+        <script src="js/cadastroExame.js"></script>
     </section>
 </main>
 

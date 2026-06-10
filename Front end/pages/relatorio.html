@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Relatório Final | OcularHub Vision</title>
-    
+
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/relatorio.css">
 
     <style>
         main.layout-lista {
-            display: block; 
+            display: block;
             max-width: 1200px;
             margin: 0 auto;
             width: 100%;
@@ -21,105 +21,104 @@
 </head>
 <body>
 
-    <header class="no-print">
-        <div class="logo">
-            <a href="home.html" style="text-decoration: none; color: inherit;">
-                <h1>Ocular<span>Hub</span> Vision</h1>
-            </a>
-        </div>
-        
-        <div class="user-info">
-            <p>Olá, <span id="userName">Dr. Rodrigo Yamaya</span> | <a href="login.html" style="color: #00aaff; font-size: 0.8rem; text-decoration: none;">Sair</a></p>
-        </div>
-    </header>
+<header class="no-print">
+    <div class="logo">
+        <a href="home.html" style="text-decoration: none; color: inherit;">
+            <h1>Ocular<span>Hub</span> Vision</h1>
+        </a>
+    </div>
 
-    <nav class="no-print">
-        <ul>
-            <li><a href="../index.html">Novo Exame</a></li>
-            <li><a href="pacientes.html">Pacientes</a></li>
-            <li><a href="historico.html">Histórico</a></li>
-            <!-- O .active indica a página atual com a linha azul -->
-            <li><a href="relatorio.html" class="active">Relatório final</a></li>
-            <li><a href="novo_medico.html">Novo Médico</a></li>
-        </ul>
-    </nav>
+    <div class="user-info">
+        <p>Olá, <span id="userName">Dr. Rodrigo Yamaya</span> | <a href="login.html" style="color: #00aaff; font-size: 0.8rem; text-decoration: none;">Sair</a></p>
+    </div>
+</header>
 
-    <main class="layout-lista">
-        
-        <div class="barra-acoes no-print" style="display: flex; justify-content: flex-end; margin-bottom: 20px;">
-            <button class="btn-secundario" onclick="window.location.href='historico.html'" style="margin-right: 15px; background: transparent; border: 1px solid #003366; color: #003366; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold;">
-                Voltar ao Histórico
-            </button>
-            <button class="btn-primario" id="btn-imprimir" style="background-color: #003366; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold;">
-                🖨️ Imprimir / Salvar PDF
-            </button>
+<nav class="no-print">
+    <ul>
+        <li><a href="../index.html">Novo Exame</a></li>
+        <li><a href="pacientes.html">Pacientes</a></li>
+        <li><a href="historico.html">Histórico</a></li>
+        <li><a href="relatorio.html" class="active">Relatório final</a></li>
+        <li><a href="novo_medico.html">Novo Médico</a></li>
+    </ul>
+</nav>
+
+<main class="layout-lista">
+
+    <div class="barra-acoes no-print" style="display: flex; justify-content: flex-end; margin-bottom: 20px;">
+        <button class="btn-secundario" onclick="window.location.href='historico.html'" style="margin-right: 15px; background: transparent; border: 1px solid #003366; color: #003366; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold;">
+            Voltar ao Histórico
+        </button>
+        <button class="btn-primario" id="btn-imprimir" style="background-color: #003366; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold;">
+            🖨️ Imprimir / Salvar PDF
+        </button>
+    </div>
+
+    <div class="relatorio-container" id="area-impressao">
+
+        <div class="cabecalho-laudo">
+            <div>
+                <h2 style="color: #003366;">Laudo de Retinografia Digital</h2>
+                <p class="data-laudo">Data da Análise: <strong id="data-registro">Carregando...</strong></p>
+            </div>
+            <div class="info-paciente-laudo">
+                <p><span>Paciente:</span> <span id="nome-paciente">Carregando...</span></p>
+                <p><span>ID:</span> <span id="id-exame">Carregando...</span> | <span>Idade:</span> 45 anos</p>
+                <p><span>Médico Solicitante:</span> Dr. Rodrigo Yamaya</p>
+            </div>
         </div>
 
-        <div class="relatorio-container" id="area-impressao">
-            
-            <div class="cabecalho-laudo">
-                <div>
-                    <h2 style="color: #003366;">Laudo de Retinografia Digital</h2>
-                    <p class="data-laudo">Data da Análise: <strong>27/05/2026 - 14:30</strong></p>
+        <div class="relatorio-grid">
+
+            <div class="coluna-imagem">
+                <div class="box-imagem">
+                    <div class="imagem-placeholder">
+                        <span>👁️ Imagem da Retina (Olho Direito)</span>
+                    </div>
                 </div>
-                <div class="info-paciente-laudo">
-                    <p><span>Paciente:</span> Ana Beatriz Costa</p>
-                    <p><span>ID:</span> #1047 | <span>Idade:</span> 45 anos</p>
-                    <p><span>Médico Solicitante:</span> Dr. Rodrigo Yamaya</p>
+                <div class="legenda-imagem">
+                    <p><strong>Tipo:</strong> Retinografia Colorida (Fundo de Olho)</p>
+                    <p><strong>Qualidade da Captura:</strong> Excelente</p>
                 </div>
             </div>
 
-            <div class="relatorio-grid">
-                
-                <div class="coluna-imagem">
-                    <div class="box-imagem">
-                        <div class="imagem-placeholder">
-                            <span>👁️ Imagem da Retina (Olho Direito)</span>
-                        </div>
+            <div class="coluna-dados">
+
+                <div class="bloco-diagnostico grave">
+                    <h3>Diagnóstico Primário da IA</h3>
+                    <div class="resultado-destaque">
+                        <span class="icone-alerta">🔴</span>
+                        <h4 id="diagnostico-ia" style="color: #991b1b; font-size: 1.4rem; margin: 0;">Carregando diagnóstico...</h4>
                     </div>
-                    <div class="legenda-imagem">
-                        <p><strong>Tipo:</strong> Retinografia Colorida (Fundo de Olho)</p>
-                        <p><strong>Qualidade da Captura:</strong> Excelente</p>
-                    </div>
+                    <p class="score-ia">Nível de Confiança da IA: <strong id="precisao-ia">--%</strong></p>
                 </div>
 
-                <div class="coluna-dados">
-                    
-                    <div class="bloco-diagnostico grave">
-                        <h3>Diagnóstico Primário da IA</h3>
-                        <div class="resultado-destaque">
-                            <span class="icone-alerta">🔴</span>
-                            <h4 style="color: #991b1b; font-size: 1.4rem; margin: 0;">Retinopatia Diabética Proliferativa</h4>
-                        </div>
-                        <p class="score-ia">Nível de Confiança da IA: <strong>98.5%</strong></p>
-                    </div>
-
-                    <div class="bloco-detalhes">
-                        <h3>Achados Clínicos (Marcadores)</h3>
-                        <ul class="lista-achados">
-                            <li>Presença de múltiplos microaneurismas na região macular.</li>
-                            <li>Exsudatos duros e algodonosos identificados.</li>
-                            <li>Sinais de neovascularização no disco óptico.</li>
-                        </ul>
-                    </div>
-
-                    <div class="bloco-recomendacao">
-                        <h3>Recomendação do Sistema</h3>
-                        <p>O quadro sugere evolução grave. Recomenda-se avaliação clínica presencial imediata e consideração para angiografia fluoresceínica (AF) para mapeamento detalhado da isquemia.</p>
-                    </div>
+                <div class="bloco-detalhes">
+                    <h3>Achados Clínicos (Marcadores)</h3>
+                    <ul class="lista-achados">
+                        <li>Presença de múltiplos microaneurismas na região macular.</li>
+                        <li>Exsudatos duros e algodonosos identificados.</li>
+                        <li>Sinais de neovascularização no disco óptico.</li>
+                    </ul>
                 </div>
-            </div>
 
-            <div class="rodape-laudo">
-                <p><em>* Este relatório foi gerado por Inteligência Artificial (OcularHub Vision) e serve como suporte à decisão médica. O diagnóstico final deve ser sempre validado por um oftalmologista responsável.</em></p>
+                <div class="bloco-recomendacao">
+                    <h3>Recomendação do Sistema</h3>
+                    <p>O quadro sugere evolução grave. Recomenda-se avaliação clínica presencial imediata e consideração para angiografia fluoresceínica (AF) para mapeamento detalhado da isquemia.</p>
+                </div>
             </div>
         </div>
-    </main>
 
-    <footer class="no-print">
-        <p>&copy; 2026 OcularHub Vision - Desenvolvido por RodSolution</p>
-    </footer>
+        <div class="rodape-laudo">
+            <p><em>* Este relatório foi gerado por Inteligência Artificial (OcularHub Vision) e serve como suporte à decisão médica. O diagnóstico final deve ser sempre validado por um oftalmologista responsável.</em></p>
+        </div>
+    </div>
+</main>
 
-    <script src="../js/relatorio.js"></script>
+<footer class="no-print">
+    <p>&copy; 2026 OcularHub Vision - Desenvolvido por RodSolution</p>
+</footer>
+
+<script src="../js/relatorio.js"></script>
 </body>
 </html>
